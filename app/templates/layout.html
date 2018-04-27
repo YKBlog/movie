@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/layui/css/layui.css') }}">
+    {% block style %}{% endblock %}
+</head>
+<body>
+<div class="layui-container">
+    <div class="layui-row">
+        <div class="layui-col-md12">
+            <ul class="layui-nav" lay-filter="">
+                <li class="layui-nav-item"><a href="{{ url_for('web.movie_list') }}">欢迎学习交流</a></li>
+                <li class="layui-nav-item {% if nav_bar=='index' %}layui-this{% endif %}"><a href="{{ url_for('web.movie_list') }}">电影</a></li>
+                <li class="layui-nav-item {% if nav_bar=='web' %}layui-this{% endif %}">
+                    <a href="javascript:;">相关说明</a>
+                    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+                        <dd><a href="{{ url_for('web.web_data') }}">数据来源</a></dd>
+                        <dd><a href="{{ url_for('web.tech') }}">技术阐述</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item {% if nav_bar=='about' %}layui-this{% endif %}"><a href="{{ url_for('web.about') }}">关于我</a></li>
+            </ul>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+    <div class="layui-row">
+        <div class="layui-col-md12 bottom_bar">
+            &copy; Copyright 所有数据均来源于 <a href="https://movie.douban.com" target="_blank"
+                                         style="text-decoration: underline;">豆瓣电影</a>，只限于交流学习，如有任何问题请联系我马上删除：<a
+                href="mailto:gedongdong2010@163.com">gedongdong2010@163.com</a>
+        </div>
+    </div>
+    <div id="gotop"></div>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/common.js') }}"></script>
+<script src="{{ url_for('static', filename='js/layui/layui.js') }}"></script>
+{% block script %}{% endblock %}
+</html>

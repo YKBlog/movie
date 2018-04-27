@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}关于我{% endblock %}
+
+{% block content %}
+    <style>
+        p {
+            height: 50px;
+        }
+
+        .bottom_bar {
+            text-align: right;
+            margin-top: 100px;
+        }
+    </style>
+    <div class="layui-row layui-col-space20" style="padding: 30px 100px;">
+        <div class="layui-col-md12">
+            <p>程序猿一枚 ~</p>
+            <p>Email: gedongdong2010@163.com</p>
+            <p>Github: (虽然没啥东西) <a href="https://github.com/gedongdong"
+                                      target="_blank">github.com/gedongdong</a></p>
+            <br>
+            <br>
+            欢迎学习，交流~~
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script src="{{ url_for('static', filename='js/detail.js') }}"></script>
+{% endblock %}

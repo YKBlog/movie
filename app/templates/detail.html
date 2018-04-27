@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block title %}{{ movie.title }}{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/detail.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="layui-row layui-col-space20">
+        <div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
+            <img src="{{ movie.cover }}" alt="" width="100%">
+        </div>
+        <div class="layui-col-xs8 layui-col-sm8 layui-col-md8">
+            <ul>
+                <li class="movie_title">{{ movie.title }}</li>
+                <li class="movie_rate">豆瓣评分: <span
+                        class="movie_rate_val">{{ movie.rate }}</span></li>
+                <li class="movie_summary">
+                    <span class="movie_txt">{{ movie.title }}剧情简介 · · · · · ·</span><br>
+                    {{ movie.summary }}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="layui-row wordcloud">
+        <a href="javascript:void(0)" style="color:dodgerblue;">WordCloud</a>
+        <br>
+        <img src="/static/wordcloud/{{ movie.douban_id }}.png" alt="">
+    </div>
+    <div class="layui-row" style="margin-top: 40px;" id="comment_list">
+        {% for c in comments %}
+            <div class="layui-col-md12" style="margin: 15px 0;">
+                <span style="color:#37a">{{ c.nickname }}</span>
+                <span style="padding: 0 20px;">{{ c.comment_time }}</span>
+                评分：<span class="layui-badge">{{ c.score }}</span>
+            </div>
+            <div class="layui-col-md12" style="border-bottom: 1px solid #ccc;padding-bottom: 15px;">
+                {{ c.content }}
+            </div>
+        {% endfor %}
+    </div>
+    <input type="hidden" id="douban_id" value="{{ movie.douban_id }}">
+{% endblock %}
+
+{% block script %}
+    <script src="{{ url_for('static', filename='js/detail.js') }}"></script>
+{% endblock %}

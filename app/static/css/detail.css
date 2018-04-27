@@ -1,0 +1,45 @@
+.top {
+    margin: 15px 0;
+    height: 50px;
+    background-color: cornflowerblue;
+}
+
+#gotop {
+    display: none;
+    width: 55px;
+    height: 55px;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    background: url(/static/images/top2.png) no-repeat -70px 0px;
+}
+
+.movie_title {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.movie_rate {
+    font-size: .8rem;
+    margin-bottom: 15px;
+}
+
+.movie_rate_val {
+    font-size: 1rem;
+    color: #FF5722
+}
+
+.movie_summary {
+    font-size: .6rem;
+    margin-bottom: 15px;
+}
+
+.movie_txt {
+    font-size: .8rem;
+    color: #007722;
+}
+
+.wordcloud {
+    margin-top: 40px;
+    font-size: 1rem;
+}

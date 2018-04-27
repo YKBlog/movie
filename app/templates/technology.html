@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block title %}数据来源{% endblock %}
+
+{% block content %}
+    <style>
+        .tech li {
+            padding: 10px;
+        }
+
+        .tech a {
+            color: #01AAED;
+        }
+
+        .tech a:hover {
+            text-decoration: underline;
+        }
+
+        .bottom_bar {
+            text-align: right;
+            margin-top: 100px;
+        }
+    </style>
+    <div class="layui-row layui-col-space20" style="padding: 30px 100px;">
+        <div class="layui-col-md12">
+            <h1 style="color:#10A3EE;">主要使用以下技术实现</h1>
+            <br>
+            <ul class="tech">
+                <li><a href="https://www.python.org/" target="_blank">Python3</a></li>
+                <li><a href="https://github.com/PyMySQL/PyMySQL" target="_blank">PyMySQL</a></li>
+                <li><a href="https://github.com/amueller/word_cloud" target="_blank">word_cloud 词云</a></li>
+                <li><a href="https://github.com/fxsjy/jieba" target="_blank">jieba 中文分词</a></li>
+                <li><a href="http://dormousehole.readthedocs.io/en/latest/" target="_blank">Flask web框架</a></li>
+                <li><a href="http://docs.jinkan.org/docs/jinja2/" target="_blank">jinja2 模板引擎</a></li>
+                <li><a href="https://scrapy.org/" target="_blank">Scrapy 爬虫框架</a></li>
+                <li><a href="https://github.com/Germey/ProxyPool" target="_blank">爬取代理ip</a></li>
+                <li><a href="http://www.layui.com/" target="_blank">Layui 前端框架</a></li>
+                <li><a href="https://github.com/necolas/normalize.css" target="_blank">normalize</a></li>
+                <li><a href="https://jquery.com/" target="_blank">Jquery</a></li>
+                <li><a href="http://www.cnblogs.com/beyondfengyu/archive/2013/03/28/2987823.html" target="_blank">回到顶部
+                    JS</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script src="{{ url_for('static', filename='js/detail.js') }}"></script>
+{% endblock %}

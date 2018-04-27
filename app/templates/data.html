@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}数据来源{% endblock %}
+
+{% block content %}
+    <style>
+        .bottom_bar {
+            text-align: right;
+            margin-top: 100px;
+        }
+    </style>
+    <div class="layui-row layui-col-space20" style="padding: 30px 100px;">
+        <div class="layui-col-md12">
+            <h1 style="color:#10A3EE;">数据来源</h1>
+            <br>
+            本网站是的数据全部来源于 <a href="https://movie.douban.com" target="_blank">豆瓣电影</a>，仅用于学习和交流，不用于商业用途。
+            <br>
+            <br>
+            欢迎学习，交流~~
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script src="{{ url_for('static', filename='js/detail.js') }}"></script>
+{% endblock %}

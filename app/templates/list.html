@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block title %}欢迎参观交流{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/list.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="layui-row layui-col-space20" id="movie_list">
+        {% for m in v_list %}
+            <div class="layui-col-xs6 layui-col-sm3 layui-col-md3" onclick="show_detail({{ m.id }})">
+                <div class="card">
+                    <div class="img_div card_img" style="background: url({{ m.cover }}) no-repeat center center;"></div>
+                    <div class="card_info">
+                        <span>{{ m.title }}</span>
+                        <div class="card_rate">
+                            豆瓣评分 <span class="layui-badge">{{ m.rate }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ url_for('static', filename='js/list.js') }}"></script>
+{% endblock %}
