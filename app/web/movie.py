@@ -3,7 +3,7 @@
 # @Contact : gedongdonghappy@gmail.com
 from math import ceil
 
-from flask import current_app, render_template, jsonify, json
+from flask import current_app, render_template, json
 
 from app.models.comments import Comments
 from app.models.movie import Movie
