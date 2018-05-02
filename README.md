@@ -46,3 +46,30 @@ sys.path.insert(0, '/data/movie')  # 项目根目录
 from movie import app as application
  ```
  
+## 表结构
+
+movie表：
+```
+CREATE TABLE `movie` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `douban_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `title` varchar(50) CHARACTER SET utf8mb4 NOT NULL DEFAULT '' COMMENT '标题',
+  `rate` float NOT NULL DEFAULT '0' COMMENT '评分',
+  `cover` varchar(200) CHARACTER SET utf8mb4 NOT NULL DEFAULT '' COMMENT '封面图',
+  `summary` text COLLATE utf8mb4_unicode_520_ci NOT NULL COMMENT '摘要',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=327 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+```
+
+movie_comments表：
+```
+CREATE TABLE `movie_comments` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `douban_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `nickname` varchar(50) CHARACTER SET utf8mb4 NOT NULL DEFAULT '' COMMENT '用户名',
+  `score` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '评分',
+  `comment_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '评论日期',
+  `content` text CHARACTER SET utf8mb4 NOT NULL COMMENT '评论内容',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=145765 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+```
